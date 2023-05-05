@@ -8,10 +8,18 @@ except ImportError as e:
     os.system("sudo pip3 install numpy")
     import numpy as np
 
+def ridge(x,y):
+     return np.dot(np.linalg.inv(np.dot(x.T,x)),np.dot(x.T,y))
 def ridge(data):
+    x, y = read_data()
+    w = model(x, y)
+    return data @ w
     pass
     
 def lasso(data):
+    x, y = read_data()
+    w = model(x, y)
+    return data @ w
     pass
 
 def read_data(path='./data/exp02/'):
